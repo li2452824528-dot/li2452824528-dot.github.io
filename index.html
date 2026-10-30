@@ -493,112 +493,128 @@
           <p class="section-index eyebrow">02 / Selected work</p>
           <div>
             <h2 id="work-title">Questions made tangible through models and systems.</h2>
-            <p class="section-intro">Three projects across risk analytics, AI systems, and computational mathematics. Published code is linked where publicly verifiable; concept visuals remain explicitly labelled.</p>
+            <p class="section-intro">Three projects across risk analytics, AI systems, and computational mathematics. Each entry states the context, my role, what I built, and where the work can be inspected.</p>
           </div>
         </div>
         <div class="work-list">
           <article class="project reveal" data-project="tradeguard" aria-labelledby="tradeguard-title">
             <div class="project-copy">
-              <div class="project-meta"><span>01 / AI systems</span><span>September 2026</span></div>
+              <div class="project-meta"><span>AI systems</span><span>Independent project</span></div>
               <h3 id="tradeguard-title">TradeGuard</h3>
               <p class="project-subtitle">Multi-Agent Transaction Fraud-Control System</p>
-              <p>A fraud-control architecture combining transaction scoring, anomaly monitoring, graph-based relationship analysis, and RAG-supported evidence retrieval.</p>
-              <p>I designed specialized agents for orchestration, signal aggregation, investigation, disposition, and audit, with human approval gates for high-risk actions. The system also includes versioned model strategies, shadow-canary-enforced routing, fallback logic, idempotent workflows, append-only audit logs, and retry/dead-letter handling.</p>
+              <p>A synthetic transaction-risk environment that connects signal aggregation, evidence-supported investigation, human approval, controlled action, and audit.</p>
+              <p>I designed the architecture and implemented the local application stack, including the case workflow, agent-assisted investigation, role-based portal, knowledge retrieval, and auditable controls. It demonstrates an end-to-end engineering approach; it does not claim deployment on real enterprise transactions.</p>
+              <dl class="project-facts">
+                <div><dt>Role</dt><dd>Independent designer and developer</dd></div>
+                <div><dt>Scope</dt><dd>Architecture, backend services, portal, data layer, workflows, documentation, and verification</dd></div>
+                <div><dt>Evidence</dt><dd>Public source, system documentation, and a reproducible local stack</dd></div>
+              </dl>
               <div class="project-tags"><span class="tag">XGBoost</span><span class="tag">SARIMA</span><span class="tag">Graph analysis</span><span class="tag">RAG</span><span class="tag">Multi-agent</span></div>
-              <div class="project-links"><a href="https://github.com/li2452824528-dot/TradeGuard" target="_blank" rel="noreferrer">View repository <span class="arrow" aria-hidden="true">&#8599;</span></a></div>
+              <div class="project-links">
+                <a href="https://github.com/li2452824528-dot/TradeGuard" target="_blank" rel="noreferrer">Repository <span class="arrow" aria-hidden="true">&#8599;</span></a>
+                <a href="https://github.com/li2452824528-dot/TradeGuard/blob/main/docs/reports/tradeguard-overview.html" target="_blank" rel="noreferrer">System overview <span class="arrow" aria-hidden="true">&#8599;</span></a>
+              </div>
             </div>
             <figure class="project-visual" data-viz="tradeguard">
               <svg viewBox="0 0 640 292" role="img" aria-labelledby="trade-svg-title trade-svg-desc" preserveAspectRatio="xMidYMid meet">
-                <title id="trade-svg-title">TradeGuard concept map placeholder</title>
-                <desc id="trade-svg-desc">An illustrative flow from transaction signals to multi-agent review and audited decisions. To be verified against the source repository.</desc>
+                <title id="trade-svg-title">TradeGuard system flow</title>
+                <desc id="trade-svg-desc">A repository-backed flow from transaction signals through case orchestration, investigation, human approval, controlled action, and audit.</desc>
                 <rect width="640" height="292" fill="#fbfcfb"/>
                 <path d="M28 45H612M28 100H612M28 155H612M28 210H612M28 265H612" stroke="#e7ebea" stroke-width="1"/>
-                <text x="28" y="29" class="svg-small">ILLUSTRATIVE SYSTEM MAP / DRAFT</text>
-                <rect x="36" y="91" width="118" height="112" fill="#f1f4f3" stroke="#d5dcda"/>
-                <text x="53" y="120" class="svg-label">TRANSACTION</text><text x="53" y="137" class="svg-label">SIGNALS</text>
-                <circle cx="56" cy="168" r="4" fill="#315bd6"/><circle cx="76" cy="168" r="4" fill="#158a6b"/><circle cx="96" cy="168" r="4" fill="#d95f4d"/>
-                <path d="M154 147H199" stroke="#315bd6" stroke-width="2"/><path d="m193 141 7 6-7 6" fill="none" stroke="#315bd6" stroke-width="2"/>
-                <rect x="202" y="70" width="188" height="154" fill="#fff" stroke="#cfd7d5"/>
-                <text x="220" y="97" class="svg-label">SIGNAL LAYER</text>
-                <rect x="219" y="111" width="72" height="34" fill="#e8edff"/><text x="229" y="132" class="svg-small">RISK SCORE</text>
-                <rect x="300" y="111" width="72" height="34" fill="#e4f3ee"/><text x="307" y="132" class="svg-small">ANOMALY</text>
-                <rect x="219" y="154" width="72" height="34" fill="#fff0ec"/><text x="225" y="175" class="svg-small">RELATIONS</text>
-                <rect x="300" y="154" width="72" height="34" fill="#f2f5d7"/><text x="309" y="175" class="svg-small">EVIDENCE</text>
-                <path d="M390 147H434" stroke="#158a6b" stroke-width="2"/><path d="m428 141 7 6-7 6" fill="none" stroke="#158a6b" stroke-width="2"/>
-                <rect x="438" y="91" width="164" height="112" fill="#101820"/>
-                <text x="455" y="120" fill="#d8ed6d" class="svg-label">AGENT REVIEW</text>
-                <text x="455" y="145" fill="#ffffff" class="svg-small">INVESTIGATE / DISPOSITION</text>
-                <text x="455" y="165" fill="#ffffff" class="svg-small">HUMAN GATE / AUDIT</text>
-                <path d="M520 203V241H602" fill="none" stroke="#d95f4d" stroke-width="2"/>
-                <circle cx="520" cy="241" r="4" fill="#d95f4d"/><text x="443" y="263" class="svg-small">DECISION + AUDIT TRAIL</text>
+                <text x="28" y="29" class="svg-small">REPOSITORY-BACKED SYSTEM FLOW</text>
+                <rect x="34" y="104" width="100" height="84" fill="#f1f4f3" stroke="#d5dcda"/>
+                <text x="52" y="137" class="svg-label">TRANSACTION</text><text x="52" y="154" class="svg-label">SIGNALS</text>
+                <circle cx="54" cy="172" r="4" fill="#315bd6"/><circle cx="73" cy="172" r="4" fill="#158a6b"/><circle cx="92" cy="172" r="4" fill="#d95f4d"/>
+                <path d="M134 146H169" stroke="#315bd6" stroke-width="2"/><path d="m163 140 7 6-7 6" fill="none" stroke="#315bd6" stroke-width="2"/>
+                <rect x="172" y="77" width="132" height="138" fill="#ffffff" stroke="#cfd7d5"/>
+                <text x="190" y="107" class="svg-label">CASE</text><text x="190" y="124" class="svg-label">ORCHESTRATION</text>
+                <rect x="189" y="145" width="98" height="32" fill="#e8edff"/><text x="204" y="165" class="svg-small">AGGREGATE</text>
+                <rect x="189" y="183" width="98" height="18" fill="#e4f3ee"/>
+                <path d="M304 146H339" stroke="#158a6b" stroke-width="2"/><path d="m333 140 7 6-7 6" fill="none" stroke="#158a6b" stroke-width="2"/>
+                <rect x="342" y="77" width="132" height="138" fill="#ffffff" stroke="#cfd7d5"/>
+                <text x="360" y="107" class="svg-label">INVESTIGATION</text>
+                <text x="360" y="137" class="svg-small">RISK CONTEXT</text><text x="360" y="156" class="svg-small">RETRIEVED EVIDENCE</text>
+                <rect x="359" y="180" width="98" height="21" fill="#fff0ec"/>
+                <path d="M474 146H509" stroke="#d95f4d" stroke-width="2"/><path d="m503 140 7 6-7 6" fill="none" stroke="#d95f4d" stroke-width="2"/>
+                <rect x="512" y="77" width="96" height="138" fill="#101820"/>
+                <text x="528" y="107" fill="#d8ed6d" class="svg-label">HUMAN</text><text x="528" y="124" fill="#d8ed6d" class="svg-label">APPROVAL</text>
+                <text x="528" y="153" fill="#ffffff" class="svg-small">CONTROLLED</text><text x="528" y="170" fill="#ffffff" class="svg-small">ACTION</text>
+                <path d="M560 215V247H608" fill="none" stroke="#d95f4d" stroke-width="2"/>
+                <circle cx="560" cy="247" r="4" fill="#d95f4d"/><text x="467" y="267" class="svg-small">AUDITABLE TRAIL</text>
               </svg>
-              <figcaption class="figure-note">Concept placeholder - final architecture to be verified against the repository.</figcaption>
+              <figcaption class="figure-note">System flow derived from the public architecture and implementation.</figcaption>
             </figure>
           </article>
 
           <article class="project reveal" data-project="fraud" aria-labelledby="fraud-title">
             <div class="project-copy">
-              <div class="project-meta"><span>02 / Data science</span><span>May 2026</span></div>
+              <div class="project-meta"><span>Data science</span><span>Applied case study</span></div>
               <h3 id="fraud-title">Fraud Detection &amp; Profit Optimization</h3>
               <p class="project-subtitle">From risk scoring to decision economics</p>
-              <p>I analyzed more than <strong>230,000 historical applications</strong> to investigate a coordinated fraud attack, using temporal, geographic, product, identity, and SARIMA-based anomaly analysis.</p>
-              <p>Feature engineering and chronological validation raised XGBoost AUC from <strong>0.858 to 0.894</strong> after integrating FraudKiller data. I then optimized decision thresholds under revenue, fraud-loss, review-cost, and API-cost constraints, increasing validation-set net profit by <strong>$27.7K</strong>.</p>
+              <p>An applied fraud case study that moves from exploratory attack-pattern analysis to a model-assisted decision policy.</p>
+              <p>I built the data-cleaning, anomaly-analysis, feature-engineering, model-validation, and cost-aware threshold pipeline. The work uses chronological validation and separates model quality from the business rules used to approve, review, or decline an application.</p>
+              <dl class="project-facts">
+                <div><dt>Role</dt><dd>Data analyst and machine-learning developer</dd></div>
+                <div><dt>Scope</dt><dd>Cleaning, investigation, feature engineering, modeling, validation, and decision optimization</dd></div>
+                <div><dt>Evidence</dt><dd>Public scripts, prepared data artifacts, model outputs, and presentation material</dd></div>
+              </dl>
               <div class="project-tags"><span class="tag">XGBoost</span><span class="tag">Feature engineering</span><span class="tag">Optimization</span><span class="tag">Risk analytics</span></div>
-              <div class="project-links"><a href="https://github.com/li2452824528-dot/Fraud-Detection-Profit-Optimization" target="_blank" rel="noreferrer">View repository <span class="arrow" aria-hidden="true">&#8599;</span></a></div>
+              <div class="project-links">
+                <a href="https://github.com/li2452824528-dot/Fraud-Detection-Profit-Optimization" target="_blank" rel="noreferrer">Repository <span class="arrow" aria-hidden="true">&#8599;</span></a>
+                <a href="https://github.com/li2452824528-dot/Fraud-Detection-Profit-Optimization/blob/main/model_building.py" target="_blank" rel="noreferrer">Model pipeline <span class="arrow" aria-hidden="true">&#8599;</span></a>
+                <a href="https://github.com/li2452824528-dot/Fraud-Detection-Profit-Optimization/blob/main/business_optimization.py" target="_blank" rel="noreferrer">Decision logic <span class="arrow" aria-hidden="true">&#8599;</span></a>
+              </div>
             </div>
-            <figure class="project-visual" data-viz="fraud">
+            <figure class="project-visual" data-viz="fraud-workflow">
               <svg viewBox="0 0 640 292" role="img" aria-labelledby="fraud-svg-title fraud-svg-desc" preserveAspectRatio="xMidYMid meet">
-                <title id="fraud-svg-title">Fraud model performance and decision value</title>
-                <desc id="fraud-svg-desc">A comparison of XGBoost AUC before and after FraudKiller integration, with the validation-set net-profit increase highlighted.</desc>
+                <title id="fraud-svg-title">Fraud analysis and decision workflow</title>
+                <desc id="fraud-svg-desc">A repository-backed workflow from application data through feature engineering, chronological validation, cost-aware policy design, and final review actions.</desc>
                 <rect width="640" height="292" fill="#fbfcfb"/>
-                <text x="30" y="30" class="svg-small">MODEL QUALITY / DECISION VALUE</text>
-                <text x="31" y="78" class="svg-label">XGBOOST AUC</text>
-                <text x="31" y="126" class="svg-small">BASELINE</text><rect x="126" y="109" width="256" height="24" fill="#dfe5e3"/><rect x="126" y="109" width="219" height="24" fill="#315bd6"/><text x="355" y="126" class="svg-label">0.858</text>
-                <text x="31" y="173" class="svg-small">WITH DATA</text><rect x="126" y="156" width="256" height="24" fill="#dfe5e3"/><rect x="126" y="156" width="228" height="24" fill="#158a6b"/><text x="365" y="173" class="svg-label">0.894</text>
-                <line x1="420" y1="55" x2="420" y2="238" stroke="#d8dddc"/>
-                <text x="452" y="79" class="svg-small">VALIDATION SET</text>
-                <text x="447" y="142" fill="#315bd6" font-family="Georgia, serif" font-size="43">+$27.7K</text>
-                <text x="452" y="170" class="svg-label">NET PROFIT</text>
-                <rect x="30" y="224" width="574" height="1" fill="#d8dddc"/>
-                <text x="31" y="252" class="svg-small">CHRONOLOGICAL VALIDATION</text><text x="325" y="252" class="svg-small">APPROVE / REVIEW / DECLINE</text>
+                <text x="30" y="30" class="svg-small">REPOSITORY-BACKED ANALYTICAL WORKFLOW</text>
+                <path d="M80 145H560" stroke="#d8dddc" stroke-width="2"/>
+                <circle cx="80" cy="145" r="28" fill="#e8edff" stroke="#315bd6"/>
+                <circle cx="200" cy="145" r="28" fill="#e4f3ee" stroke="#158a6b"/>
+                <circle cx="320" cy="145" r="28" fill="#fff0ec" stroke="#d95f4d"/>
+                <circle cx="440" cy="145" r="28" fill="#f2f5d7" stroke="#a4b334"/>
+                <circle cx="560" cy="145" r="28" fill="#101820"/>
+                <path d="m141 139 7 6-7 6M261 139l7 6-7 6M381 139l7 6-7 6M501 139l7 6-7 6" fill="none" stroke="#59646d" stroke-width="2"/>
+                <text x="80" y="94" text-anchor="middle" class="svg-label">APPLICATION</text><text x="80" y="110" text-anchor="middle" class="svg-label">DATA</text>
+                <text x="200" y="94" text-anchor="middle" class="svg-label">CLEAN &amp;</text><text x="200" y="110" text-anchor="middle" class="svg-label">ENGINEER</text>
+                <text x="320" y="94" text-anchor="middle" class="svg-label">CHRONOLOGICAL</text><text x="320" y="110" text-anchor="middle" class="svg-label">VALIDATION</text>
+                <text x="440" y="94" text-anchor="middle" class="svg-label">COST-AWARE</text><text x="440" y="110" text-anchor="middle" class="svg-label">POLICY</text>
+                <text x="560" y="94" text-anchor="middle" class="svg-label">DECISION</text>
+                <text x="80" y="218" text-anchor="middle" class="svg-small">PATTERNS</text>
+                <text x="200" y="218" text-anchor="middle" class="svg-small">FEATURES</text>
+                <text x="320" y="218" text-anchor="middle" class="svg-small">MODEL CHECK</text>
+                <text x="440" y="218" text-anchor="middle" class="svg-small">THRESHOLDS</text>
+                <text x="560" y="218" text-anchor="middle" class="svg-small">APPROVE / REVIEW</text><text x="560" y="234" text-anchor="middle" class="svg-small">/ DECLINE</text>
               </svg>
-              <figcaption class="figure-note">Outcome graphic based on the project summary; underlying notebook and assumptions should be reviewed before publication.</figcaption>
+              <figcaption class="figure-note">Analytical workflow reflected in the public project scripts.</figcaption>
             </figure>
           </article>
 
           <article class="project reveal" data-project="sandpile" aria-labelledby="sandpile-title">
             <div class="project-copy">
-              <div class="project-meta"><span>03 / Computational mathematics</span><span>March 2026</span></div>
+              <div class="project-meta"><span>Computational mathematics</span><span>Individual project</span></div>
               <h3 id="sandpile-title">Abelian Sandpile on Peano Fractal Boundaries</h3>
               <p class="project-subtitle">Simulation, structure, and computational experimentation</p>
-              <p>I studied Abelian Sandpile Models on square-grid graphs with recursively generated Peano-curve sink boundaries. Using Dhar's stabilization formulation, I computed and verified identity configurations.</p>
-              <p>I then simulated stabilization across multiple resolutions and fractal orders, examining odometer profiles, level sets, and toppling dynamics.</p>
+              <p>A computational study of Abelian Sandpile Models on square-grid graphs with recursively generated Peano-curve sink boundaries.</p>
+              <p>I implemented the boundary construction and stabilization routines, computed and verified identity configurations, and compared height patterns, odometer profiles, level sets, and toppling behavior through reproducible experiments.</p>
+              <dl class="project-facts">
+                <div><dt>Role</dt><dd>Independent mathematical programmer and report author</dd></div>
+                <div><dt>Scope</dt><dd>Recursive geometry, simulation, identity verification, visual analysis, and technical reporting</dd></div>
+                <div><dt>Evidence</dt><dd>Public Python source, generated figures, and a complete technical report</dd></div>
+              </dl>
               <div class="project-tags"><span class="tag">Discrete systems</span><span class="tag">Simulation</span><span class="tag">Fractal boundaries</span></div>
-              <div class="project-links"><a href="https://github.com/li2452824528-dot/abelian-sandpile-on-peano-fractal-boundaries" target="_blank" rel="noreferrer">View repository <span class="arrow" aria-hidden="true">&#8599;</span></a></div>
+              <div class="project-links">
+                <a href="https://github.com/li2452824528-dot/abelian-sandpile-on-peano-fractal-boundaries" target="_blank" rel="noreferrer">Repository <span class="arrow" aria-hidden="true">&#8599;</span></a>
+                <a href="https://github.com/li2452824528-dot/abelian-sandpile-on-peano-fractal-boundaries/blob/main/report/sandpile_report.pdf" target="_blank" rel="noreferrer">Technical report <span class="arrow" aria-hidden="true">&#8599;</span></a>
+                <a href="https://github.com/li2452824528-dot/abelian-sandpile-on-peano-fractal-boundaries/tree/main/src" target="_blank" rel="noreferrer">Source <span class="arrow" aria-hidden="true">&#8599;</span></a>
+              </div>
             </div>
             <figure class="project-visual">
-              <svg viewBox="0 0 640 292" role="img" aria-labelledby="sand-svg-title sand-svg-desc" preserveAspectRatio="xMidYMid meet">
-                <title id="sand-svg-title">Sandpile simulation visual placeholder</title>
-                <desc id="sand-svg-desc">An abstract square-grid visualization with a highlighted recursive boundary. It is illustrative and not a computed project result.</desc>
-                <rect width="640" height="292" fill="#fbfcfb"/>
-                <text x="30" y="30" class="svg-small">SIMULATION VISUAL / PLACEHOLDER</text>
-                <g transform="translate(87 59)" stroke="#d8dddc" stroke-width="1">
-                  <rect x="0" y="0" width="176" height="176" fill="#f3f5f4"/>
-                  <path d="M22 0V176M44 0V176M66 0V176M88 0V176M110 0V176M132 0V176M154 0V176M0 22H176M0 44H176M0 66H176M0 88H176M0 110H176M0 132H176M0 154H176"/>
-                </g>
-                <g transform="translate(87 59)">
-                  <rect x="22" y="22" width="22" height="22" fill="#315bd6"/><rect x="44" y="22" width="22" height="22" fill="#315bd6"/>
-                  <rect x="66" y="44" width="22" height="22" fill="#158a6b"/><rect x="88" y="44" width="22" height="22" fill="#158a6b"/>
-                  <rect x="110" y="66" width="22" height="22" fill="#d8ed6d"/><rect x="88" y="88" width="22" height="22" fill="#d8ed6d"/>
-                  <rect x="66" y="110" width="22" height="22" fill="#d95f4d"/><rect x="44" y="132" width="22" height="22" fill="#d95f4d"/>
-                  <path d="M0 0H44V22H66V44H88V66H110V88H132V110H154V132H176" fill="none" stroke="#101820" stroke-width="3"/>
-                </g>
-                <line x1="332" y1="65" x2="332" y2="232" stroke="#d8dddc"/>
-                <text x="367" y="91" class="svg-label">GRID</text><text x="367" y="112" class="svg-small">SQUARE-LATTICE GRAPH</text>
-                <text x="367" y="151" class="svg-label">BOUNDARY</text><text x="367" y="172" class="svg-small">RECURSIVE PEANO CURVE</text>
-                <text x="367" y="211" class="svg-label">DYNAMICS</text><text x="367" y="232" class="svg-small">STABILIZATION / ODOMETER</text>
-              </svg>
-              <figcaption class="figure-note">Illustrative placeholder - replace with a verified simulation output from the project.</figcaption>
+              <img class="project-artifact" src="assets/peano-boundary-tiling.png" alt="Recursive Peano boundary tiles generated by the project code." loading="eager" decoding="async">
+              <figcaption class="figure-note">Generated Peano tiling used to construct the simulation's sink boundary.</figcaption>
             </figure>
           </article>
         </div>
