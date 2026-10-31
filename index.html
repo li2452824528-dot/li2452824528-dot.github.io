@@ -195,7 +195,7 @@
     .role h3 { margin: 0; font-family: var(--serif); font-size: 30px; font-weight: 400; }
     .role-title { margin: 4px 0 0; color: var(--blue); font-size: 14px; font-weight: 650; }
     .timeline-date { text-align: right; color: var(--quiet); }
-    .role-details { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 36px; margin-top: 27px; }
+    .role-details { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; margin-top: 27px; }
     .role-details p { margin: 0; color: var(--muted); font-size: 14px; }
     .role-details strong { color: var(--ink); font-weight: 600; }
 
@@ -256,6 +256,7 @@
       .header-inner { gap: 18px; }
       .nav-list { gap: 16px; }
       .section-head, .experience-grid, .next-grid { grid-template-columns: 110px minmax(0, 1fr); }
+      .role-details { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .project { grid-template-columns: minmax(0, 1fr) minmax(300px, .9fr); gap: 30px; }
       .project h3 { font-size: 32px; }
       .approach-grid { gap: 45px; }
@@ -401,10 +402,6 @@
                 <div><dt>Evidence</dt><dd>Public source, system documentation, and a reproducible local stack</dd></div>
               </dl>
               <div class="project-tags"><span class="tag">XGBoost</span><span class="tag">SARIMA</span><span class="tag">Graph analysis</span><span class="tag">RAG</span><span class="tag">Multi-agent</span></div>
-              <div class="project-links">
-                <a href="https://github.com/li2452824528-dot/TradeGuard" target="_blank" rel="noreferrer">Repository <span class="arrow" aria-hidden="true">&#8599;</span></a>
-                <a href="https://github.com/li2452824528-dot/TradeGuard/blob/main/docs/reports/tradeguard-overview.html" target="_blank" rel="noreferrer">System overview <span class="arrow" aria-hidden="true">&#8599;</span></a>
-              </div>
             </div>
             <figure class="project-visual tradeguard-gallery" data-viz="tradeguard" data-stage="0" aria-labelledby="trade-figure-title" aria-label="TradeGuard application architecture. Click or press Enter to advance through the system views." tabindex="0">
               <div class="trade-main-panel">
@@ -458,9 +455,7 @@
               </dl>
               <div class="project-tags"><span class="tag">XGBoost</span><span class="tag">Feature engineering</span><span class="tag">Optimization</span><span class="tag">Risk analytics</span></div>
               <div class="project-links">
-                <a href="https://github.com/li2452824528-dot/Fraud-Detection-Profit-Optimization" target="_blank" rel="noreferrer">Repository <span class="arrow" aria-hidden="true">&#8599;</span></a>
-                <a href="https://github.com/li2452824528-dot/Fraud-Detection-Profit-Optimization/blob/main/model_building.py" target="_blank" rel="noreferrer">Model pipeline <span class="arrow" aria-hidden="true">&#8599;</span></a>
-                <a href="https://github.com/li2452824528-dot/Fraud-Detection-Profit-Optimization/blob/main/business_optimization.py" target="_blank" rel="noreferrer">Decision logic <span class="arrow" aria-hidden="true">&#8599;</span></a>
+                <a href="assets/reports/fraud-risk-decisioning-case-study.pdf" target="_blank" rel="noreferrer">Public case study <span class="arrow" aria-hidden="true">&#8599;</span></a>
               </div>
             </div>
             <figure class="project-visual fraud-territory-figure" data-viz="fraud" aria-labelledby="fraud-figure-title">
@@ -488,9 +483,7 @@
               </dl>
               <div class="project-tags"><span class="tag">Discrete systems</span><span class="tag">Simulation</span><span class="tag">Fractal boundaries</span></div>
               <div class="project-links">
-                <a href="https://github.com/li2452824528-dot/abelian-sandpile-on-peano-fractal-boundaries" target="_blank" rel="noreferrer">Repository <span class="arrow" aria-hidden="true">&#8599;</span></a>
-                <a href="https://github.com/li2452824528-dot/abelian-sandpile-on-peano-fractal-boundaries/blob/main/report/sandpile_report.pdf" target="_blank" rel="noreferrer">Technical report <span class="arrow" aria-hidden="true">&#8599;</span></a>
-                <a href="https://github.com/li2452824528-dot/abelian-sandpile-on-peano-fractal-boundaries/tree/main/src" target="_blank" rel="noreferrer">Source <span class="arrow" aria-hidden="true">&#8599;</span></a>
+                <a href="assets/reports/sandpile-technical-report.pdf" target="_blank" rel="noreferrer">Technical report <span class="arrow" aria-hidden="true">&#8599;</span></a>
               </div>
             </div>
             <figure class="project-visual">
@@ -507,8 +500,8 @@
         <div class="section-head reveal">
           <p class="section-index eyebrow">03 / Applied experience</p>
           <div>
-            <h2 id="experience-title">Taking AI from model behavior to working systems.</h2>
-            <p class="section-intro">A practical perspective on language models, knowledge workflows, and software that supports real operational processes.</p>
+            <h2 id="experience-title">Making AI useful in real workflows.</h2>
+            <p class="section-intro">During an AI engineering internship supporting automotive companies expanding internationally, I helped turn customer feedback and fragmented team knowledge into workflows that could be reused, coordinated, and followed through.</p>
           </div>
         </div>
         <div class="experience-grid reveal">
@@ -519,9 +512,9 @@
               <p class="timeline-date">JUL-SEP 2026</p>
             </div>
             <div class="role-details">
-              <p><strong>Voice of Customer.</strong> Developed a multilingual pipeline that converted user reviews into structured sentiment, vehicle, symptom, and business-topic records using LLM prompting and standardized output schemas.</p>
-              <p><strong>Knowledge workflows.</strong> Built a FastAPI-based RAG hub for consumer, business, and KOL knowledge, with version control, historical snapshots, idempotent ingestion, archival recovery, and automated MaxKB synchronization.</p>
-              <p><strong>Collaboration workflow.</strong> Extended the platform to support case creation, impact assessment, task assignment, execution feedback, monitoring, retrospective review, and closure.</p>
+              <p><strong>From feedback to usable insight.</strong> On the Voice of Customer (VOC) module, I helped turn unstructured feedback into structured records of customer sentiment and recurring issues. A retrieval-augmented generation (RAG) workflow used similar historical cases to interpret ambiguous language and let high-confidence cases expand the knowledge base over time.</p>
+              <p><strong>From separate outputs to shared knowledge.</strong> Consumer, business, and key opinion leader (KOL) teams generated useful outputs independently. I helped develop a central knowledge hub so their work could be searched and reused across the project, contributing to versioning, synchronization, current and historical records, and shared interfaces with FastAPI and MaxKB.</p>
+              <p><strong>From knowledge to coordinated action.</strong> I helped extend the platform from retrieval into a cross-team workflow that made queries more reliable, kept business domains distinct, and supported task handoffs, monitoring, and case closure. I also coordinated interface requirements, supported integration testing, aligned group progress, and represented the team in weekly updates.</p>
             </div>
           </div>
         </div>
@@ -576,7 +569,7 @@
         <div class="additional-list reveal">
           <article class="additional-item">
             <span class="mono">March 2025</span>
-            <div><h3><a href="https://github.com/li2452824528-dot/restaurant-reception-ordering-system" target="_blank" rel="noreferrer">Restaurant Reception &amp; Ordering System <span class="arrow" aria-hidden="true">&#8599;</span></a></h3><p>An end-to-end restaurant management system integrating custom queues and stacks, priority scheduling, Trie-based search, and directed graphs for waitlisting, allocation, ordering, checkout, and dish recycling.</p></div>
+            <div><h3>Restaurant Reception &amp; Ordering System</h3><p>An end-to-end restaurant management system integrating custom queues and stacks, priority scheduling, Trie-based search, and directed graphs for waitlisting, allocation, ordering, checkout, and dish recycling.</p></div>
             <span class="mono">Java</span>
           </article>
           <article class="additional-item">
@@ -609,7 +602,6 @@
           </div>
           <div class="contact-links">
             <a href="mailto:weihanli2026@163.com">Email <span class="arrow" aria-hidden="true">&#8599;</span></a>
-            <a href="https://github.com/li2452824528-dot" target="_blank" rel="noreferrer">GitHub <span class="arrow" aria-hidden="true">&#8599;</span></a>
             <a href="mailto:weihanli2026@163.com?subject=CV%20request">Request CV <span class="arrow" aria-hidden="true">&#8599;</span></a>
           </div>
         </div>
