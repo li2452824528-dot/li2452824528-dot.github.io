@@ -416,7 +416,7 @@
                 <a href="assets/reports/tradeguard-system-note.html" target="_blank" rel="noreferrer">Public system note <span class="arrow" aria-hidden="true">&#8599;</span></a>
               </div>
             </div>
-            <figure class="project-visual tradeguard-gallery" data-viz="tradeguard" data-stage="0" aria-labelledby="trade-figure-title" aria-label="TradeGuard application architecture. Click or press Enter to advance through the system views." tabindex="0">
+            <figure class="project-visual tradeguard-gallery" data-viz="tradeguard" data-stage="0" aria-label="TradeGuard application architecture. Click the diagram to advance through the system views." aria-describedby="trade-stage-status">
               <div class="trade-main-panel">
                 <p class="visual-kicker" id="trade-figure-title">Application architecture</p>
                 <div class="trade-architecture" role="img" aria-label="TradeGuard application architecture showing inputs, AgentTeams, skills, MCP tools, data, and human approval">
@@ -449,7 +449,8 @@
                   </div>
                 </div>
               </div>
-              <div class="trade-stage-indicator" aria-hidden="true"><span></span><span></span><span></span></div>
+              <button class="trade-stage-hitarea" type="button" aria-label="Show next TradeGuard view" aria-describedby="trade-stage-status"></button>
+              <p class="trade-stage-status" id="trade-stage-status" aria-live="polite">01 / 03 · Click to continue</p>
               <figcaption class="figure-note">Application, workflow, and runtime views derived from the project architecture baseline.</figcaption>
             </figure>
           </article>
