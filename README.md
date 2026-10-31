@@ -8,7 +8,7 @@ Live site: `https://li2452824528-dot.github.io/`
 
 - `index.html` contains the approved English content and accessible document structure.
 - `enhancements.css` adds the responsive visual system, project stages, and reduced-motion behavior.
-- `app.js` adds the scroll progress indicator, active navigation, signal-network canvas, and project interactions.
+- `app.js` adds the scroll progress indicator, active navigation, and project interactions.
 - Repository evidence is integrated directly into Selected Work and More Projects rather than repeated in a standalone section.
 
 ## Publish with GitHub Pages
@@ -24,7 +24,7 @@ The workflow can also be started manually from the Actions tab.
 
 - TradeGuard, Fraud Detection & Profit Optimization, Sandpile, and Restaurant Reception & Ordering System currently point to verified public repositories under `li2452824528-dot`.
 - DF-Zero Analysis is intentionally excluded from the portfolio because it is a fork and is not part of the approved application narrative.
-- Selected Work uses repository-backed workflows and a generated project figure; every public visual is tied to the implementation or report.
+- Selected Work uses repository-backed architecture views, decision logic, and generated project figures. TradeGuard's three-part visual is derived from its public business, application, and technical architecture; the other project visuals are tied to their implementation or report.
 - The original CV is not bundled because it contains a phone number. Add a phone-redacted copy only if you want a public download link.
 - Confirm all project code, screenshots, and data are appropriate for public release. Do not publish credentials, private datasets, or employer material.
 
