@@ -374,7 +374,7 @@ body {
     linear-gradient(90deg, rgb(111 155 216 / 7%) 1px, transparent 1px),
     radial-gradient(circle at 55% 35%, #183357, #081321 68%);
   background-size: 40px 40px, 40px 40px, auto;
-  cursor: pointer;
+  cursor: default;
 }
 
 .trade-main-panel,
@@ -503,27 +503,38 @@ body {
 .trade-topology > div:nth-child(3) { margin-inline: 36px 0; }
 .trade-topology span { color: #d9e8fc; font: 10px/1.3 var(--mono); text-align: center; text-transform: uppercase; }
 
-.trade-stage-indicator {
+.trade-stage-hitarea {
+  position: absolute;
+  z-index: 6;
+  inset: 18px 18px 36px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  touch-action: pan-y;
+}
+
+.trade-stage-hitarea:focus-visible {
+  outline: 2px solid #82a8ff;
+  outline-offset: -4px;
+}
+
+.trade-stage-hitarea:disabled {
+  cursor: default;
+}
+
+.trade-stage-status {
   position: absolute;
   z-index: 7;
   right: 20px;
-  bottom: 17px;
-  display: flex;
-  gap: 6px;
-}
-
-.trade-stage-indicator span {
-  width: 18px;
-  height: 2px;
-  background: rgb(148 181 226 / 28%);
-  transition: width 360ms var(--ease-out), background-color 360ms ease;
-}
-
-.tradeguard-gallery[data-stage="0"] .trade-stage-indicator span:nth-child(1),
-.tradeguard-gallery[data-stage="1"] .trade-stage-indicator span:nth-child(2),
-.tradeguard-gallery[data-stage="2"] .trade-stage-indicator span:nth-child(3) {
-  width: 28px;
-  background: #81a9ef;
+  bottom: 46px;
+  min-width: 184px;
+  margin: 0;
+  color: #a9c1df;
+  font: 9px/1.35 var(--mono);
+  text-align: center;
+  text-transform: uppercase;
+  pointer-events: none;
 }
 
 .tradeguard-gallery .figure-note {
@@ -739,6 +750,8 @@ body {
   .trade-topology > div:nth-child(2) { margin-inline: 9px 0; }
   .trade-topology > div:nth-child(3) { margin-inline: 18px 0; }
   .trade-topology span { font-size: 8px; }
+  .trade-stage-hitarea { inset: 12px 12px 37px; }
+  .trade-stage-status { right: 12px; bottom: 44px; min-width: 154px; font-size: 8px; }
 
   .fraud-territory-figure {
     grid-template-rows: auto minmax(300px, 1fr) auto;
