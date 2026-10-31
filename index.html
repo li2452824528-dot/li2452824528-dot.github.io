@@ -347,6 +347,16 @@
 
   <main id="main">
     <div id="top" aria-hidden="true"></div>
+    <section class="profile-intro" aria-labelledby="site-title">
+      <div class="wrap profile-intro-grid">
+        <div>
+          <p class="eyebrow">Portfolio / 2026</p>
+          <h1 id="site-title">Weihan Li</h1>
+        </div>
+        <p>Mathematics &amp; Computer Science undergraduate</p>
+        <p>Preparing for taught master's study in AI/ML and Data Science.</p>
+      </div>
+    </section>
     <section class="section academic" id="academic" aria-labelledby="academic-title">
       <div class="wrap">
         <div class="section-head reveal">
@@ -395,13 +405,16 @@
               <h3 id="tradeguard-title">TradeGuard</h3>
               <p class="project-subtitle">Multi-Agent Transaction Fraud-Control System</p>
               <p>A synthetic transaction-risk environment that connects signal aggregation, evidence-supported investigation, human approval, controlled action, and audit.</p>
-              <p>I designed the architecture and implemented the local application stack, including the case workflow, agent-assisted investigation, role-based portal, knowledge retrieval, and auditable controls. It demonstrates an end-to-end engineering approach; it does not claim deployment on real enterprise transactions.</p>
+              <p>I designed the architecture and implemented the local application stack, including the case workflow, agent-assisted investigation, role-based portal, knowledge retrieval, and auditable controls. The central design constraint was that agent assistance should improve investigation without allowing an unreviewed system output to trigger a consequential action. I therefore separated signal aggregation and evidence gathering from execution: a human approval gate authorizes the action, while the audit layer preserves the decision trail.</p>
               <dl class="project-facts">
                 <div><dt>Role</dt><dd>Independent designer and developer</dd></div>
                 <div><dt>Scope</dt><dd>Architecture, backend services, portal, data layer, workflows, documentation, and verification</dd></div>
-                <div><dt>Evidence</dt><dd>Public source, system documentation, and a reproducible local stack</dd></div>
+                <div><dt>Evidence</dt><dd>Public technical note and interactive architecture views</dd></div>
               </dl>
               <div class="project-tags"><span class="tag">XGBoost</span><span class="tag">SARIMA</span><span class="tag">Graph analysis</span><span class="tag">RAG</span><span class="tag">Multi-agent</span></div>
+              <div class="project-links">
+                <a href="assets/reports/tradeguard-system-note.html" target="_blank" rel="noreferrer">Public system note <span class="arrow" aria-hidden="true">&#8599;</span></a>
+              </div>
             </div>
             <figure class="project-visual tradeguard-gallery" data-viz="tradeguard" data-stage="0" aria-labelledby="trade-figure-title" aria-label="TradeGuard application architecture. Click or press Enter to advance through the system views." tabindex="0">
               <div class="trade-main-panel">
@@ -437,7 +450,7 @@
                 </div>
               </div>
               <div class="trade-stage-indicator" aria-hidden="true"><span></span><span></span><span></span></div>
-              <figcaption class="figure-note">Application, workflow, and runtime views derived from the public 00–09 architecture baseline.</figcaption>
+              <figcaption class="figure-note">Application, workflow, and runtime views derived from the project architecture baseline.</figcaption>
             </figure>
           </article>
 
@@ -447,11 +460,11 @@
               <h3 id="fraud-title">Fraud Detection &amp; Profit Optimization</h3>
               <p class="project-subtitle">From risk scoring to decision economics</p>
               <p>An applied fraud case study that moves from exploratory attack-pattern analysis to a model-assisted decision policy.</p>
-              <p>I built the data-cleaning, anomaly-analysis, feature-engineering, model-validation, and cost-aware threshold pipeline. The work uses chronological validation and separates model quality from the business rules used to approve, review, or decline an application.</p>
+              <p>I built the pipeline from data preparation and anomaly analysis through feature engineering, chronological validation, and decision-policy design. I treated an unusual pattern as a starting point for investigation, not an automatic fraud label: timing, activity patterns, and contextual signals had to be considered together before drawing a conclusion. Risk scoring and action selection were therefore kept separate, with a review band preserving uncertainty rather than forcing every application into an automatic approve-or-decline outcome.</p>
               <dl class="project-facts">
                 <div><dt>Role</dt><dd>Data analyst and machine-learning developer</dd></div>
                 <div><dt>Scope</dt><dd>Cleaning, investigation, feature engineering, modeling, validation, and decision optimization</dd></div>
-                <div><dt>Evidence</dt><dd>Public scripts, prepared data artifacts, model outputs, and presentation material</dd></div>
+                <div><dt>Evidence</dt><dd>Public portfolio case study and conceptual decision policy</dd></div>
               </dl>
               <div class="project-tags"><span class="tag">XGBoost</span><span class="tag">Feature engineering</span><span class="tag">Optimization</span><span class="tag">Risk analytics</span></div>
               <div class="project-links">
@@ -479,7 +492,7 @@
               <dl class="project-facts">
                 <div><dt>Role</dt><dd>Independent mathematical programmer and report author</dd></div>
                 <div><dt>Scope</dt><dd>Recursive geometry, simulation, identity verification, visual analysis, and technical reporting</dd></div>
-                <div><dt>Evidence</dt><dd>Public Python source, generated figures, and a complete technical report</dd></div>
+                <div><dt>Evidence</dt><dd>Public technical report and generated boundary figure</dd></div>
               </dl>
               <div class="project-tags"><span class="tag">Discrete systems</span><span class="tag">Simulation</span><span class="tag">Fractal boundaries</span></div>
               <div class="project-links">
