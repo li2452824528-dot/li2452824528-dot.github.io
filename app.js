@@ -11,18 +11,34 @@
     "TradeGuard control loop",
     "TradeGuard runtime topology"
   ];
+  const tradeStageNames = [
+    "Application architecture",
+    "Control loop",
+    "Runtime topology"
+  ];
+  const tradeAdvanceButton = tradeGallery?.querySelector(".trade-stage-hitarea");
+  const tradeStageStatus = tradeGallery?.querySelector(".trade-stage-status");
   let tradeStage = 0;
   let allowTradeScrollAdvance = false;
+  let tradeTouchStart = null;
+  let suppressTradeClick = false;
 
   const setTradeStage = (stage) => {
     if (!tradeGallery) return;
     tradeStage = Math.max(0, Math.min(tradeStageLabels.length - 1, stage));
     tradeGallery.dataset.stage = String(tradeStage);
-    const nextAction = tradeStage < tradeStageLabels.length - 1
-      ? " Click or press Enter to advance to the next system view."
-      : " Final system view.";
-    tradeGallery.setAttribute("aria-label", `${tradeStageLabels[tradeStage]}.${nextAction}`);
+    const current = String(tradeStage + 1).padStart(2, "0");
+    const total = String(tradeStageLabels.length).padStart(2, "0");
+    const isFinalStage = tradeStage === tradeStageLabels.length - 1;
+    tradeGallery.setAttribute("aria-label", `${tradeStageLabels[tradeStage]}. View ${current} of ${total}.${isFinalStage ? " Final view." : " Click the diagram to advance."}`);
+    if (tradeStageStatus) tradeStageStatus.textContent = isFinalStage ? `${current} / ${total} · Final view` : `${current} / ${total} · Click to continue`;
+    if (tradeAdvanceButton) {
+      tradeAdvanceButton.disabled = isFinalStage;
+      tradeAdvanceButton.setAttribute("aria-label", isFinalStage ? "Final TradeGuard view" : `Show ${tradeStageNames[tradeStage + 1]}`);
+    }
   };
+
+  const moveTradeStage = (offset) => setTradeStage(tradeStage + offset);
 
   const updateScrollState = (advanceTradeStage = false) => {
     const maxScroll = Math.max(1, doc.scrollHeight - window.innerHeight);
@@ -69,14 +85,41 @@
     if (["ArrowDown", "PageDown", " ", "End"].includes(event.key)) markTradeScrollIntent();
   });
   window.addEventListener("resize", updateScrollState);
-  tradeGallery?.addEventListener("click", () => {
-    if (tradeStage < tradeStageLabels.length - 1) setTradeStage(tradeStage + 1);
+  tradeAdvanceButton?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    if (suppressTradeClick) {
+      suppressTradeClick = false;
+      return;
+    }
+    moveTradeStage(1);
+  });
+  tradeGallery?.addEventListener("click", (event) => {
+    if (event.target.closest(".trade-stage-hitarea")) return;
+    moveTradeStage(1);
   });
   tradeGallery?.addEventListener("keydown", (event) => {
-    if (event.key !== "Enter" && event.key !== " ") return;
-    event.preventDefault();
-    if (tradeStage < tradeStageLabels.length - 1) setTradeStage(tradeStage + 1);
+    if (event.target.closest(".trade-stage-hitarea")) return;
+    if (event.key === "ArrowRight" || event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      moveTradeStage(1);
+    }
   });
+  tradeGallery?.addEventListener("touchstart", (event) => {
+    if (event.touches.length !== 1) return;
+    const touch = event.touches[0];
+    tradeTouchStart = { x: touch.clientX, y: touch.clientY };
+  }, { passive: true });
+  tradeGallery?.addEventListener("touchend", (event) => {
+    if (!tradeTouchStart || event.changedTouches.length !== 1) return;
+    const touch = event.changedTouches[0];
+    const deltaX = touch.clientX - tradeTouchStart.x;
+    const deltaY = touch.clientY - tradeTouchStart.y;
+    tradeTouchStart = null;
+    if (Math.abs(deltaX) < 48 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+    suppressTradeClick = true;
+    window.setTimeout(() => { suppressTradeClick = false; }, 450);
+    if (deltaX < 0) moveTradeStage(1);
+  }, { passive: true });
   setTradeStage(0);
   updateScrollState();
 
